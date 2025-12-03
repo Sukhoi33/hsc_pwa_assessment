@@ -1,0 +1,24 @@
+{% extends "tasks/layout.html" %}
+{% load static %}
+{% block content%}
+<h1>Add Task</h1>
+<form action="{% url 'tasks:add' %}" method="post" id="taskForm">
+   {% csrf_token %}
+   <table><tr><td> {{ form }} </td></tr>
+          <tr><td style="text-align: right;"> <input type="submit" id="submit" class="button" value="Add Task" disabled> </td></tr>
+   </table>
+</form>
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{% url 'tasks:index' %}">View Tasks</a>
+</div><script>
+document.addEventListener('DOMContentLoaded', () => {
+   document.querySelector("#task").onkeyup = () => {
+       if (document.querySelector("#task").value.length > 0) {
+           document.querySelector("#submit").disabled = false;
+       } else {
+           document.querySelector("#submit").disabled = true;
+       }               
+   }
+});
+</script>
+{% endblock %}

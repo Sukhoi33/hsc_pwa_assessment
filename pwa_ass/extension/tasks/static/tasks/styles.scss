@@ -1,0 +1,142 @@
+// Define Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$bg-color: #f4f4f4;
+$text-color: #333;
+$font-stack: Helvetica, sans-serif;
+
+// Base Styling
+body {
+  font-family: $font-stack;
+  background-color: $bg-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Header
+header {
+  background-color: $primary-color;
+  padding: 10px 20px;
+  color: white;
+  .user-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    span {
+      margin-right: 15px;
+    }
+    a, button {
+      background-color: $secondary-color;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+      &:hover {
+        background-color: scale-color($secondary-color, $lightness: -10%);
+      }
+    }
+  }
+}
+
+// Messages
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 600px;
+  li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    &.error { background-color: #e74c3c; color: white; }
+    &.success { background-color: $secondary-color; color: white; }
+  }
+}
+
+// Main Content
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: $primary-color;
+  }
+}
+
+// Forms and Inputs
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  label {
+    font-weight: bold;
+  }
+  input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  button {
+    padding: 10px;
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+      background-color: scale-color($primary-color, $lightness: -10%);
+    }
+  }
+}
+
+// Task List
+#task-list {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Buttons and Links
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  background-color: $primary-color;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    background-color: scale-color($primary-color, $lightness: -10%);
+  }
+}
+
+// Responsive Design
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  header, main {
+    width: 100%;
+    padding: 10px;
+  }
+}
