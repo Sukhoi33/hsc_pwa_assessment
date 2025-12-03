@@ -1,0 +1,135 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3498db;
+  padding: 10px 20px;
+  color: white;
+}
+header .user-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .user-info span {
+  margin-right: 15px;
+}
+header .user-info a, header .user-info button {
+  background-color: #2ecc71;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+header .user-info a:hover, header .user-info button:hover {
+  background-color: rgb(41.4, 183.6, 101.7);
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 600px;
+}
+.messages li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.messages li.error {
+  background-color: #e74c3c;
+  color: white;
+}
+.messages li.success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+main h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #3498db;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+form label {
+  font-weight: bold;
+}
+form input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+form button {
+  padding: 10px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+form button:hover {
+  background-color: rgb(36.7380753138, 138.7882845188, 207.1619246862);
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+}
+#task-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+#task-list li:last-child {
+  border-bottom: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  background-color: #3498db;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+.button:hover {
+  background-color: rgb(36.7380753138, 138.7882845188, 207.1619246862);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  header, main {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

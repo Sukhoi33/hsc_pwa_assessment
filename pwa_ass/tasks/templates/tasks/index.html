@@ -1,0 +1,35 @@
+{% extends "tasks/layout.html" %}
+{% block content %}
+<h1>Task List</h1>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.description|default:"No description" }}</td>
+                <td>
+                    {% if task.completed %}
+                        ✅
+                    {% else %}
+                        ❌
+                    {% endif %}
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="3">No Tasks.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'tasks:add' %}">Add a New Task</a>
+{% endblock %}
