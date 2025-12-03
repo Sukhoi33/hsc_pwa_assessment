@@ -1,0 +1,12 @@
+{% extends "tasks/layout.html" %}
+{% block content %}
+<h1>User Profile</h1>
+
+<div class="profile-box">
+    <p><strong>Username:</strong> {{ request.user.username }}</p>
+    <p><strong>Email:</strong> {{ request.user.email }}</p>
+</div>
+
+<p><a href="{% url 'tasks:index' %}">View Your Tasks →</a></p>
+
+{% endblock %}
